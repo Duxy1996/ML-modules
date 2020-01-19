@@ -177,11 +177,33 @@ suicide problems. This feature is represented with the X[2] variable. Is the amo
 
 ## Conclusions:
 
+As we can see in the several iterations above that **alcohol consumption** , **employment rate** and **money income**
+have a direct impact in the suicide rate in one country/zone. This factos are related with the people happines and it seems
+normal the results given.
+
+* When there is a high level of alcohol consumption the risk of suicide is high too.
+* When the employment rate is high, the suicide risk is low.
+* When the employment rate is high, but the alocohol consumption too the suicide risk is high
+* When the income is high, the suicide risk drops
+
+### Classification conclusions:
+
+When we increase the number of samples the model is more accurated. The results given with 80 samples are worst than the given with the
+120 samples. We cannot fake samples the results are strange.
+
+Increasing the depth is not allways good, in this example when the depth is more than 4 the model is overfitted.
+
+![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Overfitting.PNG)
+
 ## References:
 
 [DecisionTreeClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
+
 [American Psychological Association](https://www.apa.org/monitor/2019/03/trends-suicide)
+
 [Live Science web](https://www.livescience.com/62781-why-are-suicide-rates-rising.html)
+
+[Desition trees](http://www.learnbymarketing.com/481/decision-tree-flavors-gini-info-gain/)
 
 
 
