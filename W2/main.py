@@ -8,7 +8,7 @@ from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
-corpus = pd.read_csv('corpus.csv')
+corpus = pd.read_csv('../corpus.csv')
 
 dic = {}
 

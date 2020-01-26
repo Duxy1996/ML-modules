@@ -137,7 +137,7 @@ for estimators_in in range(1,estimators):
   scores_test.append(score)
 ```
 
-The source could could be found here and executed when you download all the dependencies.
+The source could could be found [here](https://github.com/Duxy1996/ML-modules/blob/master/W2/main.py) and executed when you download all the dependencies.
 
 ### Usage demo
 
@@ -149,7 +149,7 @@ The code allows us to configure at the moment many parameters of the **random fo
 know if a group of people is under the risk path. Using the features of several zones and countries in the world
 we can know which zones and which groups of people are in danger.
 
-The first approach was to create a classifier whit the same features given in the first week analysis. These fetures are 
+The first approach was to create a classifier whit the same features given in the first week analysis. These features are 
 **average income, emplyment rate and alcohol consumption**.
 
 ### Features given with 1 to 5 estimators:
@@ -163,7 +163,7 @@ Features:
 
 ![FIGURE1](../assets/Figure_1_3F-5E.png)
 
-The results is worst than the **Decision Tree Classifier** created last week. The data seams overfitted and the results could be improved if we add more features or increase the number of estimators.
+The results were worst than the **Decision Tree Classifier** created last week. The data seams overfitted and the results could be improved if we add more features or increase the number of estimators.
 
 ## Increase number of estimators
 
@@ -178,13 +178,13 @@ The results is worst than the **Decision Tree Classifier** created last week. Th
 
 ![FIGURE2](../assets/Figure_1_3F-80E.png)
 
-The result is better than the found using the **Decision Tree Classifier** created last week. The classifier is more general
-and the average of all the decision trees classifiers created in the random forest boost the performance. We need more than 70 
-estimators to get this score which is 2.68% more accurated.
+The result was better than the found using the **Decision Tree Classifier** created last week. The classifier is more general
+and the average of all the decision tree classifiers created in the random forest boost the performance. We need more than 70 
+estimators to get this score, which is 2.68% more accurate.
 
 ### Features given with 1 to 200 estimatros:
 
-In this case we cot the same result as we got in the 80 estimators example. With this three features is not possible no get a better score with this method and this parameters.
+In this case we got the same result as we got in the 80 estimators example. With this three features is not possible no get a better score with this method and this parameters.
 
 ![FIGURE3](../assets/Figure_1_3F-200E.png)
 
@@ -192,7 +192,7 @@ In this case we cot the same result as we got in the 80 estimators example. With
 ## Increase number of features
 
 The first approach is to see which features are the most important to train the model. We are going to use it all the features
-to train a model. The numbers of estimators was 20, but the best score was with 16. The classifier was overfitted.
+to train a model. The numbers of estimators were 20, but the best score was with 16. The classifier was overfitted.
 
 Best score: 0.8888888888888888
 
