@@ -197,29 +197,29 @@ to train a model. The numbers of estimators were 20, but the best score was with
 Best score: 0.8888888888888888
 
  Features:
- ('alcconsumption' , 0.13992497811155133),
- ('urbanrate'      , 0.12417763451322696),
- ('incomeperperson', 0.09992949872678097),
- ('lifeexpectancy' , 0.08325723783830452),
- ('relectricperperson', 0.08239666192941696),
- ('internetuserate'   , 0.08100141497784522),
- ('employrate'        , 0.07681917397312162),
- ('co2emissions'      , 0.06863109105570663),
- ('breastcancerper100th', 0.0640648565136001),
- ('armedforcesrate'     , 0.061298656356664025),
- ('hivrate'             , 0.04847041994519234),
- ('femaleemployrate'    , 0.036929496591020405),
- ('polityscore'         , 0.03309887946756893),
- ('oilperperson'        , 0.0)
+* ('alcconsumption' , 0.13992497811155133),
+* ('urbanrate'      , 0.12417763451322696),
+* ('incomeperperson', 0.09992949872678097),
+* ('lifeexpectancy' , 0.08325723783830452),
+* ('relectricperperson', 0.08239666192941696),
+* ('internetuserate'   , 0.08100141497784522),
+* ('employrate'        , 0.07681917397312162),
+* ('co2emissions'      , 0.06863109105570663),
+* ('breastcancerper100th', 0.0640648565136001),
+* ('armedforcesrate'     , 0.061298656356664025),
+* ('hivrate'             , 0.04847041994519234),
+* ('femaleemployrate'    , 0.036929496591020405),
+* ('polityscore'         , 0.03309887946756893),
+* ('oilperperson'        , 0.0)
 
 Following this order are going to be created several random forest whit the combination of the strongst features:
 
  Best score: 0.9285714285714286
 
  Features:
- ('urbanrate', 0.3749732022602544)
- ('incomeperperson', 0.3229797851495926)
- ('employrate', 0.30204701259015304)
+* ('urbanrate', 0.3749732022602544)
+* ('incomeperperson', 0.3229797851495926)
+* ('employrate', 0.30204701259015304)
 
 
 ![FIGURE3](../assets/Figure_2_3F-80E.png)
