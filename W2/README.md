@@ -161,6 +161,12 @@ Features:
 * ('incomeperperson', 0.3296434577748365)
 * ('employrate', 0.3138485857909424)
 
+```
+ Confusion matrix:
+ [[36  1] 
+ [ 4  0]] 
+```
+
 ![FIGURE1](../assets/Figure_1_3F-5E.png)
 
 The results were worst than the **Decision Tree Classifier** created last week. The data seams overfitted and the results could be improved if we add more features or increase the number of estimators.
@@ -176,6 +182,12 @@ The results were worst than the **Decision Tree Classifier** created last week. 
 * ('incomeperperson', 0.304181190497636)
 * ('employrate', 0.29443200801189756)
 
+```
+ Confusion matrix:
+ [[36  1] 
+ [ 2  2]] 
+```
+
 ![FIGURE2](../assets/Figure_1_3F-80E.png)
 
 The result was better than the found using the **Decision Tree Classifier** created last week. The classifier is more general
@@ -185,6 +197,12 @@ estimators to get this score, which is 2.68% more accurate.
 ### Features given with 1 to 200 estimatros:
 
 In this case we got the same result as we got in the 80 estimators example. With this three features is not possible no get a better score with this method and this parameters.
+
+```
+ Confusion matrix:
+ [[36  1] 
+ [ 2  2]] 
+```
 
 ![FIGURE3](../assets/Figure_1_3F-200E.png)
 
@@ -221,6 +239,11 @@ Following this order are going to be created several random forest whit the comb
 * ('incomeperperson', 0.3229797851495926)
 * ('employrate', 0.30204701259015304)
 
+```
+ Confusion matrix:
+ [[39  1] 
+ [ 2  0]] 
+```
 
 ![FIGURE3](../assets/Figure_2_3F-80E.png)
 

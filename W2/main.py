@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
 
 corpus = pd.read_csv('../corpus.csv')
 
@@ -61,6 +62,8 @@ for estimators_in in range(1,estimators):
 
   if best_score_test < score:
     best_score_test = score
+    predictions=clas.predict(X_test)
+    confusion_mat = confusion_matrix(y_test,predictions)
 
 # print()
 # print("Test score: ",scores_test)
@@ -74,6 +77,10 @@ print()
 feat_score = list(zip(features, clas.feature_importances_))
 feat_score.sort(key = operator.itemgetter(1), reverse = True)
 
+
+
+print(" Confusion matrix: \n", confusion_mat)
+print()
 print(" Features: ", feat_score)
 
 
