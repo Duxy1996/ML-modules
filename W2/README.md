@@ -229,7 +229,25 @@ in the past iteration. Whit this three features we achieve the best result.
 
 ## Conclusions:
 
+As we can see in the several iterations above that **alcohol consumption** , **employment rate**, **money income** and **urbanrate**
+have a direct impact in the suicide rate in one country/zone. This factos are related with the people happines and it seems
+normal the results given.
+
+### Week one
+* When there is a high level of alcohol consumption the risk of suicide is high too.
+* When the employment rate is high, the suicide risk is low.
+* When the employment rate is high, but the alocohol consumption too the suicide risk is high
+* When the income is high, the suicide risk drops
+
+### Week two
+* The emplyment rate is not such important
+* The urban rate is more important than **employment rate** and **money income**
+* We cannot discard any features which affect to this risk despite of **oilperperson**
+
 ### Classification conclusions:
+
+When we increase the estimatros the data is more generaliced and the score increases when the features are relevan to the model.
+The feature which do not affect the model have a low weight. With a few estiamtors the model is ovefitted.
 
 ## References:
 
