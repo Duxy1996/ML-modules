@@ -63,11 +63,169 @@ It shows the best socre of all the iterations too.
 
 ### Implementation
 
+Import needed libs
+```python
+import pandas as pd
+import numpy as np
+import operator
+import pydot
+import matplotlib.pyplot as plt
+
+from sklearn import tree
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+```
+
+Read corpus
+
+```python
+corpus = pd.read_csv('corpus.csv')
+```
+
+Feature selection
+
+```python
+# Show all the features loaded from the corpus
+dic = {}
+
+for i,col in enumerate(corpus.columns): 
+  print(" ",i,col)
+  dic[i] = col
+
+features = []
+feature_sel = 0
+
+print(" Select features (-1 exit)")
+
+# Allows you to selec the features using the enumeration number
+while(feature_sel != -1):
+  feature_sel = int(input("> "))
+  if (feature_sel >= 0):
+    features.append(dic[feature_sel])
+    print(" ",features)
+```
+
+```python
+# Target selecction and data clean
+features.append('suicideDanger')
+corpus = corpus[features]
+
+corpus.replace(' ', np.nan, inplace=True)
+corpus = corpus.dropna()
+corpus = corpus.reset_index(drop=True)
+```
+
+Clasificator init
+
+```python
+# Split the datasaet in two and train the model
+X_train, X_test, y_train, y_test = train_test_split(X_train,Y_trian, random_state = 0)
+
+scores_train    = []
+scores_test     = []
+best_score_test = 0
+estimators_list = list(range(1,estimators))
+
+for estimators_in in range(1,estimators):
+  clas = RandomForestClassifier(n_estimators=estimators_in, random_state = 0).fit(X_train, y_train.values.ravel())
+  pred = clas.predict(X_test)
+  y_test_copy = y_test['suicideDanger'].values.tolist()
+  pred  = zip(pred,y_test_copy)
+  score = clas.score(X_test,y_test_copy)
+  scoreT = clas.score(X_train,y_train)
+  scores_train.append(scoreT)
+  scores_test.append(score)
+```
+
+The source could could be found here and executed when you download all the dependencies.
+
 ### Usage demo
 
-![Alcohol-1-D](../assets/RandomForest.gif)
+![GIF](../assets/RandomForest.gif)
 
 ## Problem analysis
+
+The code allows us to configure at the moment many parameters of the **random forest** classifier used to
+know if a group of people is under the risk path. Using the features of several zones and countries in the world
+we can know which zones and which groups of people are in danger.
+
+The first approach was to create a classifier whit the same features given in the first week analysis. These fetures are 
+**average income, emplyment rate and alcohol consumption**.
+
+### Features given with 1 to 5 estimators:
+
+Best score: 0.8780487804878049
+
+Features:
+* ('alcconsumption', 0.3565079564342211)
+* ('incomeperperson', 0.3296434577748365)
+* ('employrate', 0.3138485857909424)
+
+![FIGURE1](../assets/Figure_1_3F-5E.png)
+
+The results is worst than the **Decision Tree Classifier** created last week. The data seams overfitted and the results could be improved if we add more features or increase the number of estimators.
+
+## Increase number of estimators
+
+### Features given with 1 to 80 estimatros:
+
+ Best score: 0.926829268292683
+
+ Features:
+* ('alcconsumption', 0.4013868014904665)
+* ('incomeperperson', 0.304181190497636)
+* ('employrate', 0.29443200801189756)
+
+![FIGURE2](../assets/Figure_1_3F-80E.png)
+
+The result is better than the found using the **Decision Tree Classifier** created last week. The classifier is more general
+and the average of all the decision trees classifiers created in the random forest boost the performance. We need more than 70 
+estimators to get this score which is 2.68% more accurated.
+
+### Features given with 1 to 200 estimatros:
+
+In this case we cot the same result as we got in the 80 estimators example. With this three features is not possible no get a better score with this method and this parameters.
+
+![FIGURE3](../assets/Figure_1_3F-200E.png)
+
+
+## Increase number of features
+
+The first approach is to see which features are the most important to train the model. We are going to use it all the features
+to train a model. The numbers of estimators was 20, but the best score was with 16. The classifier was overfitted.
+
+Best score: 0.8888888888888888
+
+ Features:
+ ('alcconsumption' , 0.13992497811155133),
+ ('urbanrate'      , 0.12417763451322696),
+ ('incomeperperson', 0.09992949872678097),
+ ('lifeexpectancy' , 0.08325723783830452),
+ ('relectricperperson', 0.08239666192941696),
+ ('internetuserate'   , 0.08100141497784522),
+ ('employrate'        , 0.07681917397312162),
+ ('co2emissions'      , 0.06863109105570663),
+ ('breastcancerper100th', 0.0640648565136001),
+ ('armedforcesrate'     , 0.061298656356664025),
+ ('hivrate'             , 0.04847041994519234),
+ ('femaleemployrate'    , 0.036929496591020405),
+ ('polityscore'         , 0.03309887946756893),
+ ('oilperperson'        , 0.0)
+
+Following this order are going to be created several random forest whit the combination of the strongst features:
+
+ Best score: 0.9285714285714286
+
+ Features:
+ ('urbanrate', 0.3749732022602544)
+ ('incomeperperson', 0.3229797851495926)
+ ('employrate', 0.30204701259015304)
+
+
+![FIGURE3](../assets/Figure_2_3F-80E.png)
+
+The result shows an improvement with the desicion tree clasifier. And is slightly better than the other three features which we selected
+in the past iteration. Whit this three features we achieve the best result.
 
 ## Conclusions:
 
