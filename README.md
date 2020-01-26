@@ -99,7 +99,7 @@ pred = clas.predict(X_test)
 
 ### Usage demo
 
-![Alcohol-1-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/DemoGif.gif)
+![Alcohol-1-D](./assets/DemoGif.gif)
 
 ## Problem analysis
 
@@ -115,7 +115,7 @@ problems with alcohol.
 
 Using one desition tree create with the console application we are going to explain which means each symbol:
 
-![Alcohol-1-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alcohol-1-D.png)
+![Alcohol-1-D](./assets/Alcohol-1-D.png)
 
 ` X[0] < 14.93 ` -> If the alcohol consumption is under this quantity the split is done in the left node, if not to the right
 one.
@@ -127,11 +127,11 @@ gini index is 0
 
 * With 1-Depth decision tree configuration the score test is 85% and train 89%
 
-![Alcohol-1-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alcohol-1-D.png)
+![Alcohol-1-D](./assets/Alcohol-1-D.png)
 
 * With 2-Depth decision tree configuration the score test is 77% and train 95%
 
-![Alcohol-2-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alcohol-2-D.png)
+![Alcohol-2-D](./assets/Alcohol-2-D.png)
 
 The tree seems overfitted, the results are fine for the train group, but not for the test one
 
@@ -144,15 +144,15 @@ X[1] variable and represents the emplyment rate in one zone.
 
 * With 2-Depth decision tree configuration the score test is 88% and train 87%
 
-![Alcohol-emply-2-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alco-emply-2-D.png)
+![Alcohol-emply-2-D](./assets/Alco-emply-2-D.png)
 
 * With 5-Depth decision tree configuration the score test is 76% and train 93%
 
-![Alcohol-5-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alco-emply-5-D.png)
+![Alcohol-5-D](./assets/Alco-emply-5-D.png)
 
 * With 7-Depth decision tree configuration the score test is 71% and train 97%
 
-![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Alco-emply-7-D.png)
+![Alcohol-7-D](./assets/Alco-emply-7-D.png)
 
 Increasing the depth path is overfitting the model instead of improving it. The data generalization in the level 2 of
 depth is enough to classify well the test results.
@@ -164,15 +164,15 @@ suicide problems. This feature is represented with the X[2] variable. Is the amo
 
 * With 2-Depth decision tree configuration the score test is 90% and train 87% **(Best score found)**
 
-![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/income-alco-emply-2-D.png)
+![Alcohol-7-D](./assets/income-alco-emply-2-D.png)
 
 * With 5-Depth decision tree configuration the score test is 87% and train 94%
 
-![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/income-alco-emply-5-D.png)
+![Alcohol-7-D](./assets/income-alco-emply-5-D.png)
 
 * With 7-Depth decision tree configuration the score test is 82% and train 96%
 
-![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/income-alco-emply-7-D.png)
+![Alcohol-7-D](./assets/income-alco-emply-7-D.png)
 
 
 ## Conclusions:
@@ -193,7 +193,7 @@ When we increase the number of samples the model is more accurated. The results 
 
 Increasing the depth is not allways good, in this example when the depth is more than 4 the model is overfitted.
 
-![Alcohol-7-D](https://raw.githubusercontent.com/Duxy1996/ML-modules/master/assets/Overfitting.PNG)
+![Alcohol-7-D](./assets/Overfitting.PNG)
 
 ## References:
 
