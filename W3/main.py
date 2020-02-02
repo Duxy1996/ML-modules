@@ -11,7 +11,7 @@ pd.options.mode.chained_assignment = None
 
 corpus = pd.read_csv('../corpus.csv')
 
-predictors = corpus[['incomeperperson','employrate','suicideDanger','alcconsumption','femaleemployrate','lifeexpectancy']]
+predictors = corpus[['incomeperperson','employrate','suicideDanger','alcconsumption','femaleemployrate','lifeexpectancy','co2emissions']]
 
 predictors.replace(' ', np.nan, inplace=True)
 predictors = predictors.dropna()
@@ -20,14 +20,14 @@ predictors['incomeperperson']  = preprocessing.scale(predictors['incomeperperson
 predictors['employrate']       = preprocessing.scale(predictors['employrate'].astype('float64'))
 predictors['alcconsumption']   = preprocessing.scale(predictors['alcconsumption'].astype('float64'))
 predictors['femaleemployrate'] = preprocessing.scale(predictors['femaleemployrate'].astype('float64'))
-predictors['lifeexpectancy'] = preprocessing.scale(predictors['lifeexpectancy'].astype('float64'))
+predictors['lifeexpectancy']   = preprocessing.scale(predictors['lifeexpectancy'].astype('float64'))
+predictors['co2emissions']     = preprocessing.scale(predictors['co2emissions'].astype('float64'))
 
 target     = predictors[['suicideDanger']]
 predictors = predictors[['incomeperperson','employrate','alcconsumption','femaleemployrate','lifeexpectancy']]
 
 pred_train, pred_test, tar_train, tar_test = train_test_split(predictors, target, test_size=.15, random_state = 0)
 
-# Implementation whith cv = 3
 model=LassoLarsCV(cv=100, precompute=False).fit(pred_train, tar_train.values.ravel())
 
 print(dict(zip(predictors.columns, model.coef_)))

@@ -4,5 +4,6 @@
 
 ### Projects
 
-* [Week One - W1]()
-* [Week Two - W2]()
+* [Week One   - W1]()
+* [Week Two   - W2]()
+* [Week Three - W3]()
