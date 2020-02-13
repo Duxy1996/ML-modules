@@ -128,7 +128,7 @@ The source could could be found [here](https://github.com/Duxy1996/ML-modules/bl
 
 ### Usage demo
 
-![GIF](../assets/LassoRegression.gif)
+![GIF](../assets/Clustering.gif)
 
 ## Problem analysis
 
